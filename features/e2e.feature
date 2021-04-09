@@ -7,6 +7,6 @@ Feature: Duplicate
         Given I Set posts api endpoint to tatics endpoint
         When set the body of request to contents of the ETOE1.json
             And perfrom post
-        Then I receive valid HTTP response code as 200
-            And validate error is False
+        Then I receive valid HTTP response code as 201
+            And validate error is True
          Then Extract Message
