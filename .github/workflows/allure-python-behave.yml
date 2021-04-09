@@ -17,13 +17,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pipenv
-          pipenv install --verbose --dev 
+          pip install -r requirements.txt
 
       - name: Run Test
         if: always()
         run: |
-          pipenv shell
           behave --format=allure_behave.formatter:AllureFormatter -o allure-results
         continue-on-error: true
 
