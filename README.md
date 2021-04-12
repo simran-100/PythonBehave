@@ -1,5 +1,6 @@
 # Behave POC
 ![API testing](https://github.com/PyxisPerformance/behavePOC/actions/workflows/allure-python-behave.yml/badge.svg)
+Look for the Detailed report [here](https://pyxisperformance.github.io/behavePOC/)
 
 This is a POC done for understanding the use of [behave](https://behave.readthedocs.io/en/stable/index.html)
 
