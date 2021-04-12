@@ -96,9 +96,6 @@ allure serve allure-results
 ## Continous testing using Github actions
 The system is configured to run the tests every time code is pushed. The test results are published github pages. You can view the results [here](https://pyxisperformance.github.io/behavePOC/)
 
-## TODO items
 
-- [ ] Run the tests at timely interval.
-- [ ] Setup git brnaching rules.
 
 
