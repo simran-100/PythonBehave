@@ -14,4 +14,4 @@ Feature: Duplicate
     Examples: Corrects
         | File name  | Code | ErrorCode |
         | ETOE1.json | 200  | True      |
-        | ETOE2.json | 200  | True      |   
+        | ETOE2.json | 201  | True      |   
