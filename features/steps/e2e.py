@@ -32,7 +32,7 @@ def validateResponseCode(context, code):
 
 @then(u'validate error is {errCode}')
 def validateResponseErrorCode(context, errCode):
-    assert context.resp.json()["error"] == bool(errCode)
+    assert str(context.resp.json()["error"]) == errCode
 
 
 @then(u'Extract Message')
