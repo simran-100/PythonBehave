@@ -1,0 +1,1363 @@
+Test Id,Test scenario,Test case,Priority,Test Data,Methods / Request Type,Test Steps,Expected status code,Error,Expected result,Actual result,Status,Comments
+po_01,Creating Tactics - step 1,create a campaign level task using tactic creation api,P0,"{
+  ""status"": ""draft"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Do a post request on API. 
+ 3. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+ 2. Response time should be less than 500ms.
+ 3. Response:{
+  ""error"": false,
+  ""data"": {
+  ""id"": 5231,
+  ""name"": null,
+  ""start_date"": null,
+  ""end_date"": null,
+  ""status"": ""draft"",
+  ""ad_account_id"": 99,
+  ""auth_user"": 11,
+  ""tasks"": [
+  {
+  ""id"": 6152,
+  ""dsl"": ""when fb_primary_actions_post_engagement for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+  ""logic"": ""T1"",
+  ""type"": """",
+  ""value"": """",
+  ""tactic"": 5231,
+  ""triggers"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""condition"": "">="",
+  ""value"": ""0"",
+  ""time"": ""today"",
+  ""aggregate"": """",
+  ""task"": 6152
+  }
+  ],
+  ""meta_data"": {},
+  ""name"": ""PAUSE_CAMPAIGN""
+  }
+  ],
+  ""filtered_ids"": null,
+  ""recalculate_filters"": null,
+  ""level"": ""campaign"",
+  ""tactic_json"": {
+  ""status"": ""draft"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [
+  {
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }
+  ],
+  ""child_groups"": []
+  }
+  }
+  ],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """",
+  ""ad_account_id"": 99
+  },
+  ""setup_type"": ""exp"",
+  ""frequency_limit"": null,
+  ""type"": ""performance""
+  }
+ }",,,done
+po_02,Creating Tactics - step 1,"Validate if ""status"" accepts ""draft""",P0,"{
+  ""status"": ""draft"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Check if the value of parameter ""status"" is ""draft""
+ 3. Do a post request on API. 
+ 4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+ 2. Response time should be less than 500ms.
+ 3. Response:
+ {
+  ""error"": false,
+  ""data"": {
+  ""id"": 5231,
+  ""name"": null,
+  ""start_date"": null,
+  ""end_date"": null,
+  ""status"": ""draft"",
+  ""ad_account_id"": 99,
+  ""auth_user"": 11,
+  ""tasks"": [
+  {
+  ""id"": 6152,
+  ""dsl"": ""when fb_primary_actions_post_engagement for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+  ""logic"": ""T1"",
+  ""type"": """",
+  ""value"": """",
+  ""tactic"": 5231,
+  ""triggers"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""condition"": "">="",
+  ""value"": ""0"",
+  ""time"": ""today"",
+  ""aggregate"": """",
+  ""task"": 6152
+  }
+  ],
+  ""meta_data"": {},
+  ""name"": ""PAUSE_CAMPAIGN""
+  }
+  ],
+  ""filtered_ids"": null,
+  ""recalculate_filters"": null,
+  ""level"": ""campaign"",
+  ""tactic_json"": {
+  ""status"": ""draft"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [
+  {
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }
+  ],
+  ""child_groups"": []
+  }
+  }
+  ],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """",
+  ""ad_account_id"": 99
+  },
+  ""setup_type"": ""exp"",
+  ""frequency_limit"": null,
+  ""type"": ""performance""
+  }
+ }",,,
+po_03,Creating Tactics - step 1,"Validate if ""status"" accepts ""on""",P0,"{
+  ""status"": ""on"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Check if the value of parameter ""status"" is ""on""
+ 3. Do a post request on API. 
+ 4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+ 2. Response time should be less than 500ms.
+ 3. Response:{
+  ""error"": false,
+  ""data"": {
+  ""id"": 5231,
+  ""name"": null,
+  ""start_date"": null,
+  ""end_date"": null,
+  ""status"": ""on"",
+  ""ad_account_id"": 99,
+  ""auth_user"": 11,
+  ""tasks"": [
+  {
+  ""id"": 6152,
+  ""dsl"": ""when fb_primary_actions_post_engagement for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+  ""logic"": ""T1"",
+  ""type"": """",
+  ""value"": """",
+  ""tactic"": 5231,
+  ""triggers"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""condition"": "">="",
+  ""value"": ""0"",
+  ""time"": ""today"",
+  ""aggregate"": """",
+  ""task"": 6152
+  }
+  ],
+  ""meta_data"": {},
+  ""name"": ""PAUSE_CAMPAIGN""
+  }
+  ],
+  ""filtered_ids"": null,
+  ""recalculate_filters"": null,
+  ""level"": ""campaign"",
+  ""tactic_json"": {
+  ""status"": ""on"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [
+  {
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }
+  ],
+  ""child_groups"": []
+  }
+  }
+  ],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """",
+  ""ad_account_id"": 99
+  },
+  ""setup_type"": ""exp"",
+  ""frequency_limit"": null,
+  ""type"": ""performance""
+  }
+ }",,,
+po_04,Creating Tactics - step 1,"Validate if ""status"" accepts ""off""",P0,"{
+  ""status"": ""off"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Check if the value of parameter ""status"" is ""off""
+ 3. Do a post request on API. 
+ 4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+ 2. Response time should be less than 500ms.
+ 3. Response:{
+  ""error"": false,
+  ""data"": {
+  ""id"": 5231,
+  ""name"": null,
+  ""start_date"": null,
+  ""end_date"": null,
+  ""status"": ""off"",
+  ""ad_account_id"": 99,
+  ""auth_user"": 11,
+  ""tasks"": [
+  {
+  ""id"": 6152,
+  ""dsl"": ""when fb_primary_actions_post_engagement for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+  ""logic"": ""T1"",
+  ""type"": """",
+  ""value"": """",
+  ""tactic"": 5231,
+  ""triggers"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""condition"": "">="",
+  ""value"": ""0"",
+  ""time"": ""today"",
+  ""aggregate"": """",
+  ""task"": 6152
+  }
+  ],
+  ""meta_data"": {},
+  ""name"": ""PAUSE_CAMPAIGN""
+  }
+  ],
+  ""filtered_ids"": null,
+  ""recalculate_filters"": null,
+  ""level"": ""campaign"",
+  ""tactic_json"": {
+  ""status"": ""off"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [
+  {
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [
+  {
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }
+  ],
+  ""child_groups"": []
+  }
+  }
+  ],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """",
+  ""ad_account_id"": 99
+  },
+  ""setup_type"": ""exp"",
+  ""frequency_limit"": null,
+  ""type"": ""performance""
+  }
+ }",,,
+po_05,Creating Tactics - step 1,"Validate if ""status"" accepts null",P0,"{
+  ""status"": null,
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Check if the value of parameter ""status"" is null
+ 3. Do a post request on API. 
+ 4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+ 2. Response time should be less than 500ms.
+ 3. Response:
+ status should not except null.",,,
+po_06,Creating Tactics - step 1,"Validate if ""status"" accepts invalid value",P3,"{
+  ""status"": ""xyz"",
+  ""date_schedule"": ""continuously"",
+  ""level"": ""campaign"",
+  ""client_name"": ""demo client"",
+  ""type"": ""performance"",
+  ""tasks"": [{
+  ""task"": ""pause_campaign"",
+  ""meta_data"": {},
+  ""conditions"": {
+  ""child_conditions"": [{
+  ""name"": ""fb_primary_actions_post_engagement"",
+  ""time"": ""today"",
+  ""condition"": "">="",
+  ""value"": 0,
+  ""rel_child"": ""AND"",
+  ""aggregate"": """",
+  ""child_conditions"": [],
+  ""child_groups"": []
+  }],
+  ""child_groups"": []
+  }
+  }],
+  ""setup_type"": ""exp"",
+  ""task_sequence"": null,
+  ""objective"": """"
+ }",POST,"1. Use the api as given in test data with the json.
+ 2. Check if the value of parameter ""status"" is ""xyz""
+ 3. Do a post request on API. 
+ 4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+ 2. Response time should be less than 500ms.
+ 3. Response:
+ status should not except any value other than ""draft"", ""on"" or ""off"". error should for invalid choice.",,,
+po_07,Creating Tactics - step 1,"Validate if ""status"" accepts integer value",P3,"{
+        ""status"": 123,
+        ""date_schedule"": ""continuously"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""status"" is 123
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+status should not except integer values.",,,
+po_08,Creating Tactics - step 1,"Validate if  ""date_schedule"" parameter accepts ""continuously""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter  ""date_schedule"": ""continuously""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+2. Response time should be less than 500ms.
+3. Response:
+{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5234,
+        ""name"": null,
+        ""start_date"": null,
+        ""end_date"": null,
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6155,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5234,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6155
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_CAMPAIGN""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""campaign"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""continuously"",
+            ""level"": ""campaign"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_campaign"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_09,Creating Tactics - step 1,"Validate if  ""date_schedule"" parameter accepts ""between_dates""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""between_dates"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """",
+        ""start_date"":""2021-03-04"",
+        ""end_date"":""2021-03-05""
+
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter   ""date_schedule"": ""between_dates""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+2. Response time should be less than 500ms.
+3. Response:
+{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5235,
+        ""name"": null,
+        ""start_date"": ""2021-03-04"",
+        ""end_date"": ""2021-03-05"",
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6156,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5235,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6156
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_CAMPAIGN""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""campaign"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""between_dates"",
+            ""level"": ""campaign"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_campaign"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""start_date"": ""2021-03-04"",
+            ""end_date"": ""2021-03-05"",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_10,Creating Tactics - step 1,"Validate if  ""start_date"" is null and ""end_date"" has a valid date.",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""between_dates"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """",
+        ""start_date"": null,
+        ""end_date"":""2021-03-05""
+
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""start_date"": null  ""end_date"": ""2021-03-05"" 
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+both should have a valid date or both should be null",,,
+po_11,Creating Tactics - step 1,"Validate if  ""end_date"" is null and ""start_date"" has a valid date.",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""between_dates"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """",
+        ""start_date"": ""2021-03-05"",
+        ""end_date"":null
+
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""start_date"": ""2021-03-05"" ""end_date"": null
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+both should have a valid date or both should be null",,,
+po_12,Creating Tactics - step 1,"Validate if  ""end_date"" is less than ""start_date""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""between_dates"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """",
+        ""start_date"": ""2021-03-05"",
+        ""end_date"":""2021-03-04""
+
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""start_date"": ""2021-03-05"" ""end_date"": ""2021-03-04""
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+""end_date"" cannot be less than ""start_date""",,,
+po_13,Creating Tactics - step 1,"Validate if ""level"" accepts ""campaign""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""campaign"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_campaign"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""level"": ""campaign""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+2. Response time should be less than 500ms.
+3. Response:
+{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5253,
+        ""name"": null,
+        ""start_date"": null,
+        ""end_date"": null,
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6174,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_CAMPAIGN\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5253,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6174
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_CAMPAIGN""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""campaign"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""continuously"",
+            ""level"": ""campaign"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_campaign"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_14,Creating Tactics - step 1,"Validate if ""level"" accepts ""adset""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""adset"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad_set"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""level"": ""adset""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+2. Response time should be less than 500ms.
+3. Response:
+{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5256,
+        ""name"": null,
+        ""start_date"": null,
+        ""end_date"": null,
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6177,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_AD_SET\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5256,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6177
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_AD_SET""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""adset"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""continuously"",
+            ""level"": ""adset"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_ad_set"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_15,Creating Tactics - step 1,"Validate if ""level"" accepts ""ad""",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""ad"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""level"": ""ad""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 OK.
+2. Response time should be less than 500ms.
+3. Response:
+{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5259,
+        ""name"": null,
+        ""start_date"": null,
+        ""end_date"": null,
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6180,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_AD\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5259,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6180
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_AD""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""ad"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""continuously"",
+            ""level"": ""ad"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_ad"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_16,Creating Tactics - step 1,"Validate if ""level"" accepts invalid option",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""xyz"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""level"": ""xyz""
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+level should not accept invalid option
+{
+    ""error"": true,
+    ""data"": {
+        ""level"": [
+            ""\""xyz\"" is not a valid choice.""
+        ]
+    }
+}",,,
+po_17,Creating Tactics - step 1,"Validate if ""level"" accepts integer",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": 123,
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""level"": ""xyz""
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+level should not accept invalid option
+{
+    ""error"": true,
+    ""data"": {
+        ""level"": [
+            ""\""123\"" is not a valid choice.""
+        ]
+    }
+}",,,
+po_18,Creating Tactics - step 1,"Validate if ""client_name"" accepts valid string",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""ad"",
+        ""client_name"": ""demo client"",
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""client_name"": ""demo client""
+3. Do a post request on API. 
+4. And validate the result as per expected",200,FALSE,"1. Status should be 200 .
+2. Response time should be less than 500ms.
+3. Response:{
+    ""error"": false,
+    ""data"": {
+        ""id"": 5260,
+        ""name"": null,
+        ""start_date"": null,
+        ""end_date"": null,
+        ""status"": ""draft"",
+        ""ad_account_id"": 99,
+        ""auth_user"": 11,
+        ""tasks"": [
+            {
+                ""id"": 6181,
+                ""dsl"": ""when fb_primary_actions_post_engagement  for today >= 0 perform the following actions \n \tPAUSE_AD\nend"",
+                ""logic"": ""T1"",
+                ""type"": """",
+                ""value"": """",
+                ""tactic"": 5260,
+                ""triggers"": [
+                    {
+                        ""name"": ""fb_primary_actions_post_engagement"",
+                        ""condition"": "">="",
+                        ""value"": ""0"",
+                        ""time"": ""today"",
+                        ""aggregate"": """",
+                        ""task"": 6181
+                    }
+                ],
+                ""meta_data"": {},
+                ""name"": ""PAUSE_AD""
+            }
+        ],
+        ""filtered_ids"": null,
+        ""recalculate_filters"": null,
+        ""level"": ""ad"",
+        ""tactic_json"": {
+            ""status"": ""draft"",
+            ""date_schedule"": ""continuously"",
+            ""level"": ""ad"",
+            ""client_name"": ""demo client"",
+            ""type"": ""performance"",
+            ""tasks"": [
+                {
+                    ""task"": ""pause_ad"",
+                    ""meta_data"": {},
+                    ""conditions"": {
+                        ""child_conditions"": [
+                            {
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                            }
+                        ],
+                        ""child_groups"": []
+                    }
+                }
+            ],
+            ""setup_type"": ""exp"",
+            ""task_sequence"": null,
+            ""objective"": """",
+            ""ad_account_id"": 99
+        },
+        ""setup_type"": ""exp"",
+        ""frequency_limit"": null,
+        ""type"": ""performance""
+    }
+}",,,
+po_19,Creating Tactics - step 1,"Validate if ""client_name"" accepts integer",P0,"{
+        ""status"": ""draft"",
+        ""date_schedule"": ""continuously"",
+        ""level"": ""ad"",
+        ""client_name"": 123,
+        ""type"": ""performance"",
+        ""tasks"": [{
+                ""task"": ""pause_ad"",
+                ""meta_data"": {},
+                ""conditions"": {
+                        ""child_conditions"": [{
+                                ""name"": ""fb_primary_actions_post_engagement"",
+                                ""time"": ""today"",
+                                ""condition"": "">="",
+                                ""value"": 0,
+                                ""rel_child"": ""AND"",
+                                ""aggregate"": """",
+                                ""child_conditions"": [],
+                                ""child_groups"": []
+                        }],
+                        ""child_groups"": []
+                }
+        }],
+        ""setup_type"": ""exp"",
+        ""task_sequence"": null,
+        ""objective"": """"
+}",POST,"1. Use the api as given in test data with the json.
+2. Check if the value of parameter ""client_name"": 123
+3. Do a post request on API. 
+4. And validate the result as per expected",400,TRUE,"1. Status should be 400 .
+2. Response time should be less than 500ms.
+3. Response:
+""client_name"" should not except integer",,,
