@@ -11,3 +11,4 @@ Feature: End 2 End Rest API testing POC2
         Then I receive valid HTTP response code as 200
             And validate error is True
          Then Extract Message
+
