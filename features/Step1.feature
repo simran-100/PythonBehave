@@ -32,6 +32,7 @@ Feature: Tactic creation Step 1 API testing
         | po_06     | ['"xyz" is not a valid choice.'] |
 
 
+
     Scenario Outline: API Step 1 : Validate if  "date_schedule" parameter accepts <value>
         Given Execute test case <test_case>
             And I Set posts api endpoint to Step 1 endpoint

@@ -7,6 +7,7 @@ log = log()
 log.info("*******************************************NEW RUN*********************************************************")
 
 
+
 @given(u'I set base REST API url and headers correctly')
 def setup_baseurl(context):
     context.baseURL = context.config.userdata.get("base_url", "url")

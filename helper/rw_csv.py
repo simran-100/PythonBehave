@@ -1,6 +1,5 @@
 import csv
 
-
 # read csv file as dictionary
 def read_csv(testcase_name, key):
     csv_file_path = 'data/First step.csv'
